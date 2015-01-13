@@ -180,8 +180,8 @@ namespace Konashi
 			bool success = false;
 			try {
 				var dict = MiniJSON.Json.Deserialize(json) as Dictionary<string,object>;
-				pin = (int) dict["pin"];
-				value = (int) dict["value"];
+				pin = (int)(long) dict["pin"];
+				value = (int)(long) dict["value"];
 				success = true;
 			}
 			catch(Exception ex) {

@@ -99,7 +99,7 @@ namespace Konashi
 			{
 				UnityKonashiPlugin.DigitalWriteAll(KonashiLevel.High);
 			}
-			if(DrawButton("digital write all log"))
+			if(DrawButton("digital write all low"))
 			{
 				UnityKonashiPlugin.DigitalWriteAll(KonashiLevel.Low);
 			}

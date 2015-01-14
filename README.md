@@ -1,12 +1,10 @@
 # Unity - Konashi Integration
 
+Using Konashi from Unity
 
+#### Requirements
+- iOS only
+- Unity 5 or later
 
-#### TODO 
-
-Automaticaly add Konashi
-	
-Automaticaly install frameworks
-
-	JavaScriptCore.framework
-	CoreBluetooth.framework
+#### Unity Konashi  
+[Konashi Github](https://github.com/YUKAI/konashi-ios-sdk)

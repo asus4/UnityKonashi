@@ -78,10 +78,16 @@ namespace Konashi
 			{
 				log = "peripheralName : " + UnityKonashiPlugin.peripheralName;
 			}
-			if(DrawButton("pinmode 0:in 1:out"))
+			if(DrawButton("pinmode 0:in 1:out 2:out 3:out"))
 			{
 				UnityKonashiPlugin.PinMode(KonashiDigitalIOPin.DigitalIO0, KonashiPinMode.Input);
 				UnityKonashiPlugin.PinMode(KonashiDigitalIOPin.DigitalIO1, KonashiPinMode.Output);
+				UnityKonashiPlugin.PinMode(KonashiDigitalIOPin.DigitalIO2, KonashiPinMode.Output);
+				UnityKonashiPlugin.PinMode(KonashiDigitalIOPin.DigitalIO3, KonashiPinMode.Output);
+			}
+			if(DrawButton("Run LED Task"))
+			{
+				StartCoroutine(RunLED());
 			}
 			if(DrawButton("pinmode all in"))
 			{
@@ -116,6 +122,19 @@ namespace Konashi
 		
 		bool DrawButton(string label) {
 			return GUILayout.Button(label, GUILayout.MinWidth(200), GUILayout.MinHeight(100));
+		}
+		
+		IEnumerator RunLED() {
+			float duration = 0.5f;
+			UnityKonashiPlugin.DigitalWrite(KonashiDigitalIOPin.DigitalIO1, KonashiLevel.High);
+			yield return new WaitForSeconds(duration);
+			UnityKonashiPlugin.DigitalWrite(KonashiDigitalIOPin.DigitalIO1, KonashiLevel.Low);
+			UnityKonashiPlugin.DigitalWrite(KonashiDigitalIOPin.DigitalIO2, KonashiLevel.High);
+			yield return new WaitForSeconds(duration);
+			UnityKonashiPlugin.DigitalWrite(KonashiDigitalIOPin.DigitalIO2, KonashiLevel.Low);
+			UnityKonashiPlugin.DigitalWrite(KonashiDigitalIOPin.DigitalIO3, KonashiLevel.High);
+			yield return new WaitForSeconds(duration);
+			UnityKonashiPlugin.DigitalWrite(KonashiDigitalIOPin.DigitalIO3, KonashiLevel.Low);
 		}
 		
 		

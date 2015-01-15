@@ -162,7 +162,9 @@ namespace Konashi
 		
 		#region private methods
 		static void Log(string msg) {
-			Debug.Log(msg.ToString());
+			if(Debug.isDebugBuild) {
+				Debug.Log(msg.ToString());
+			}
 		}
 		
 		static byte[] DecodeBase64(string strData)

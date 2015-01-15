@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 namespace Konashi
@@ -9,7 +9,7 @@ namespace Konashi
 		
 		void Start()
 		{
-			var konashi = UnityKonashiPlugin.instance;
+			var konashi = KonashiPlugin.instance;
 			
 			// To use konashi initialize first.
 			konashi.Initialize();
@@ -56,34 +56,34 @@ namespace Konashi
 			scrollPosition =  GUILayout.BeginScrollView(scrollPosition, GUILayout.MinWidth(300));
 			if(DrawButton("Find"))
 			{
-				UnityKonashiPlugin.Find();
+				KonashiPlugin.Find();
 			}
 			if(DrawButton("Software rivision"))
 			{
-				log = "softwre rivision : " + UnityKonashiPlugin.sofwareRevision;
+				log = "softwre rivision : " + KonashiPlugin.sofwareRevision;
 			}
 			if(DrawButton("Disconnect"))
 			{
-				UnityKonashiPlugin.Disconect();
+				KonashiPlugin.Disconect();
 			}
 			if(DrawButton("is connected?"))
 			{
-				log = "is connected ? : " + UnityKonashiPlugin.isConnected;
+				log = "is connected ? : " + KonashiPlugin.isConnected;
 			}
 			if(DrawButton("is ready?"))
 			{
-				log = "is ready ? : " + UnityKonashiPlugin.isReady;
+				log = "is ready ? : " + KonashiPlugin.isReady;
 			}
 			if(DrawButton("peripheralName"))
 			{
-				log = "peripheralName : " + UnityKonashiPlugin.peripheralName;
+				log = "peripheralName : " + KonashiPlugin.peripheralName;
 			}
 			if(DrawButton("pinmode 0:in 1:out 2:out 3:out"))
 			{
-				UnityKonashiPlugin.PinMode(KonashiDigitalIOPin.DigitalIO0, KonashiPinMode.Input);
-				UnityKonashiPlugin.PinMode(KonashiDigitalIOPin.DigitalIO1, KonashiPinMode.Output);
-				UnityKonashiPlugin.PinMode(KonashiDigitalIOPin.DigitalIO2, KonashiPinMode.Output);
-				UnityKonashiPlugin.PinMode(KonashiDigitalIOPin.DigitalIO3, KonashiPinMode.Output);
+				KonashiPlugin.PinMode(KonashiDigitalIOPin.DigitalIO0, KonashiPinMode.Input);
+				KonashiPlugin.PinMode(KonashiDigitalIOPin.DigitalIO1, KonashiPinMode.Output);
+				KonashiPlugin.PinMode(KonashiDigitalIOPin.DigitalIO2, KonashiPinMode.Output);
+				KonashiPlugin.PinMode(KonashiDigitalIOPin.DigitalIO3, KonashiPinMode.Output);
 			}
 			if(DrawButton("Run LED Task"))
 			{
@@ -91,31 +91,31 @@ namespace Konashi
 			}
 			if(DrawButton("pinmode all in"))
 			{
-				UnityKonashiPlugin.PinModeAll(KonashiPinMode.Input);
+				KonashiPlugin.PinModeAll(KonashiPinMode.Input);
 			}
 			if(DrawButton("digital wirte 1:High"))
 			{
-				UnityKonashiPlugin.DigitalWrite(KonashiDigitalIOPin.DigitalIO1, KonashiLevel.High);
+				KonashiPlugin.DigitalWrite(KonashiDigitalIOPin.DigitalIO1, KonashiLevel.High);
 			}
 			if(DrawButton("digital wirte 1:Log"))
 			{
-				UnityKonashiPlugin.DigitalWrite(KonashiDigitalIOPin.DigitalIO1, KonashiLevel.Low);
+				KonashiPlugin.DigitalWrite(KonashiDigitalIOPin.DigitalIO1, KonashiLevel.Low);
 			}
 			if(DrawButton("digital write all high"))
 			{
-				UnityKonashiPlugin.DigitalWriteAll(KonashiLevel.High);
+				KonashiPlugin.DigitalWriteAll(KonashiLevel.High);
 			}
 			if(DrawButton("digital write all low"))
 			{
-				UnityKonashiPlugin.DigitalWriteAll(KonashiLevel.Low);
+				KonashiPlugin.DigitalWriteAll(KonashiLevel.Low);
 			}
 			if(DrawButton("BatteryLevelReadRequest"))
 			{
-				UnityKonashiPlugin.BatteryLevelReadRequest();
+				KonashiPlugin.BatteryLevelReadRequest();
 			}
 			if(DrawButton("SignalStrengthReadRequest"))
 			{
-				UnityKonashiPlugin.SignalStrengthReadRequest();
+				KonashiPlugin.SignalStrengthReadRequest();
 			}
 			GUILayout.EndScrollView();
 		}
@@ -126,15 +126,15 @@ namespace Konashi
 		
 		IEnumerator RunLED() {
 			float duration = 0.5f;
-			UnityKonashiPlugin.DigitalWrite(KonashiDigitalIOPin.DigitalIO1, KonashiLevel.High);
+			KonashiPlugin.DigitalWrite(KonashiDigitalIOPin.DigitalIO1, KonashiLevel.High);
 			yield return new WaitForSeconds(duration);
-			UnityKonashiPlugin.DigitalWrite(KonashiDigitalIOPin.DigitalIO1, KonashiLevel.Low);
-			UnityKonashiPlugin.DigitalWrite(KonashiDigitalIOPin.DigitalIO2, KonashiLevel.High);
+			KonashiPlugin.DigitalWrite(KonashiDigitalIOPin.DigitalIO1, KonashiLevel.Low);
+			KonashiPlugin.DigitalWrite(KonashiDigitalIOPin.DigitalIO2, KonashiLevel.High);
 			yield return new WaitForSeconds(duration);
-			UnityKonashiPlugin.DigitalWrite(KonashiDigitalIOPin.DigitalIO2, KonashiLevel.Low);
-			UnityKonashiPlugin.DigitalWrite(KonashiDigitalIOPin.DigitalIO3, KonashiLevel.High);
+			KonashiPlugin.DigitalWrite(KonashiDigitalIOPin.DigitalIO2, KonashiLevel.Low);
+			KonashiPlugin.DigitalWrite(KonashiDigitalIOPin.DigitalIO3, KonashiLevel.High);
 			yield return new WaitForSeconds(duration);
-			UnityKonashiPlugin.DigitalWrite(KonashiDigitalIOPin.DigitalIO3, KonashiLevel.Low);
+			KonashiPlugin.DigitalWrite(KonashiDigitalIOPin.DigitalIO3, KonashiLevel.Low);
 		}
 		
 		

@@ -5,19 +5,19 @@ using System.Runtime.InteropServices;
 
 namespace Konashi
 {
-	public class UnityKonashiPlugin : MonoBehaviour {
+	public class KonashiPlugin : MonoBehaviour {
 		#region singlton
-		static UnityKonashiPlugin _instance;
-		public static UnityKonashiPlugin instance
+		static KonashiPlugin _instance;
+		public static KonashiPlugin instance
 		{
 			get
 			{
 				if(_instance == null)
 				{
 					
-					_instance = GameObject.FindObjectOfType<UnityKonashiPlugin>();
+					_instance = GameObject.FindObjectOfType<KonashiPlugin>();
 					if(_instance == null) {
-						_instance = new GameObject("UnityKonashiPlugin").AddComponent<UnityKonashiPlugin>();
+						_instance = new GameObject("UnityKonashiPlugin").AddComponent<KonashiPlugin>();
 					}
 					DontDestroyOnLoad(_instance.gameObject);
 				}

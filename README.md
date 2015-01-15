@@ -6,5 +6,5 @@ Using Konashi from Unity
 - iOS only
 - Unity 5 or later
 
-#### Unity Konashi  
-[Konashi Github](https://github.com/YUKAI/konashi-ios-sdk)
+#### Libraries
+[Konashi - Github](https://github.com/YUKAI/konashi-ios-sdk) : Apache License v2.0

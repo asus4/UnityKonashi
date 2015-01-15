@@ -8,7 +8,7 @@ PlayerSettings:
   defaultScreenOrientation: 4
   targetDevice: 2
   targetGlesGraphics: 1
-  targetIOSGraphics: -1
+  targetIOSGraphics: 3
   targetResolution: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
@@ -72,7 +72,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  iPhoneBundleIdentifier: com.ibukuro.KonashiSample
+  iPhoneBundleIdentifier: com.asus4.KonashiSample
   preloadedAssets: []
   metroEnableIndependentInputSource: 0
   metroEnableLowLatencyPresentationAPI: 0

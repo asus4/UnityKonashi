@@ -5,5 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: Assets/Konashi/Sample/KnashiSample - 3D.unity
   - enabled: 1
-    path: Assets/Konashi/Sample/KonashiSample.unity
+    path: Assets/Konashi/Sample/KonashiSample - UI.unity

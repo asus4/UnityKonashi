@@ -9,5 +9,6 @@ Using Konashi from Unity
 - iOS only
 - Unity 5 or later
 
-#### Libraries
-[Konashi - Github](https://github.com/YUKAI/konashi-ios-sdk) : Apache License v2.0
+#### Using Libraries
+- [Konashi - Github](https://github.com/YUKAI/konashi-ios-sdk)
+- [MiniJSON - Gist](https://gist.github.com/darktable/1411710)
